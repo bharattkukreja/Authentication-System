@@ -1,10 +1,14 @@
 var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/nodeauth');
+
 var db = mongoose.connection;
 
 // User
 var UserSchema = mongoose.Schema({
 	username: {
 		type: String,
+		index: true
 	},
 	password: {
 		type: String
